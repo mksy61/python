@@ -29,3 +29,5 @@ print(mostusedword, mostusednumber)
 
 s = sorted(wordCount.items())
 print(s)
+
+file.close()

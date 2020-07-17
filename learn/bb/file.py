@@ -15,3 +15,5 @@ for v in file:
 
 print()
 print(hepsi)
+
+file.close()
