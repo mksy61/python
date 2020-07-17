@@ -17,7 +17,16 @@ class Kare(Sekil):
     def hacim(self):
         return self.x*self.y*self.h
 
+    def __eq__(self, k):
+        return self.hacim == k.hacim
+
+    def __add__(self, k):
+        return self.hacim() + k.hacim()
+
 
 k1 = Kare(3, 4, 5)
+k2 = Kare(3, 4, 6)
 
+print(k1 == k2)
+print(k1+k2)
 print(k1.hacim())
