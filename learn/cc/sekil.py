@@ -5,7 +5,6 @@ class Sekil(object):
         self.y = y
 
     def alan(self):
-
         return self.x * self.y
 
 
