@@ -6,8 +6,8 @@ def gen(n):
         yield i**2
 
 
-h = [i**2 for i in range(10000)]
-g = gen(10000)
+h = [i**2 for i in range(10000000)]
+g = gen(10000000)
 
-print(sys.getsizeof(h))
 print(sys.getsizeof(g))
+print(sys.getsizeof(h))
