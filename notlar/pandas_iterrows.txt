@@ -1,0 +1,4 @@
+for index,value in data[['Attack']][0:1].iterrows():
+    print(index," : ",value)
+
+df["DURUM"] = ["Genç" if v < df["AGE"].mean() else "Yaşlı" for v in df["AGE"]]
