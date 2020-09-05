@@ -1,0 +1,20 @@
+# Import the train_test_split function 
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeRegressor
+
+# fill in and uncomment
+train_X, val_X, train_y, val_y = train_test_split(X,y, random_state=1)
+
+# Specify the model
+model = DecisionTreeRegressor(random_state=1)
+
+# Fit model with the training data.
+model.fit(train_X, train_y)
+
+# Predict with all validation observations
+val_predictions = model.predict(val_X)
+
+#Calculate the Mean Absolute Error in Validation Data
+from sklearn.metrics import mean_absolute_error
+val_mae = mean_absolute_error(val_y, val_predictions)
+print(val_mae)
