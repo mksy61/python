@@ -14,6 +14,7 @@ from sklearn.linear_model import HuberRegressor
 from sklearn.linear_model import TweedieRegressor
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error
+from xgboost import XGBRegressor
 
 df = pd.read_csv("train.csv")
 X = df[['LotArea', 'YearBuilt', '1stFlrSF', '2ndFlrSF',
@@ -96,6 +97,12 @@ val_mae = mean_absolute_error(val_y, val_predictions)
 models[str(type(model))] = val_mae
 
 model = RandomForestRegressor()
+model.fit(train_X, train_y)
+val_predictions = model.predict(val_X)
+val_mae = mean_absolute_error(val_y, val_predictions)
+models[str(type(model))] = val_mae
+
+model = XGBRegressor(n_estimators=1000, learning_rate=0.01)
 model.fit(train_X, train_y)
 val_predictions = model.predict(val_X)
 val_mae = mean_absolute_error(val_y, val_predictions)
