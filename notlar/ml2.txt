@@ -1,0 +1,8 @@
+X = data.drop(['class'], axis=1)
+y = data['class']
+
+X_encoded = pd.get_dummies(X, prefix_sep="_")
+y_encoded = LabelEncoder().fit_transform(y)
+X_scaled = StandardScaler().fit_transform(X_encoded)
+
+X_train, X_test, y_train, y_test = train_test_split(X_scaled, y_encoded, test_size = 0.30, random_state=101)
